@@ -13,5 +13,4 @@ const appOptions: Options = {
 
 const handleAppStart = () => console.log(`Server On: http://localhost:${PORT}`)
 
-
 app.start(appOptions, handleAppStart)
