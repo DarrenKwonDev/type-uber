@@ -8,6 +8,7 @@ uber clone using typescript+node+react+graphQL
 - [x] React.TS
 - [x] Node.TS  
 - [x] GraphQL  
+- [x] TypeORM
 
 ## cautions!  
 

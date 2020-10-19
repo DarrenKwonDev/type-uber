@@ -1,12 +1,16 @@
-export const typeDefs = ["type Query {\n  sayBye: String!\n  sayHello: Greeting!\n}\n\ntype Greeting {\n  text: String!\n  error: Boolean!\n}\n"];
+export const typeDefs = ["type Query {\n  sayBye: String!\n  sayHello(name: String!): HelloResponse!\n}\n\ntype HelloResponse {\n  text: String!\n  error: Boolean!\n}\n"];
 /* tslint:disable */
 
 export interface Query {
   sayBye: string;
-  sayHello: Greeting;
+  sayHello: HelloResponse;
 }
 
-export interface Greeting {
+export interface SayHelloQueryArgs {
+  name: string;
+}
+
+export interface HelloResponse {
   text: string;
   error: boolean;
 }
