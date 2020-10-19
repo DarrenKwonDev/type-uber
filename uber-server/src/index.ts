@@ -1,5 +1,6 @@
 import dotenv from "dotenv";
-dotenv.config() // dotenv를 상단에 config해줘야 다른 파일에서도 동작함
+import path from "path"
+dotenv.config({path: path.resolve(__dirname, "../.env")}) // dotenv를 상단에 config해줘야 다른 파일에서도 동작함
 import { Options } from "graphql-yoga";
 import { createConnection } from "typeorm"
 import connectionOptions from "./ormConfig";
