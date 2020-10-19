@@ -12,6 +12,11 @@ uber clone using typescript+node+react+graphQL
 
 ## cautions!  
 
-**Merge GraphQL Schemas has been deprecated and merged into GraphQL Tools**, so it will no longer get updates. Use GraphQL Tools instead to stay up-to-date!  
+**Merge GraphQL Schemas has been deprecated and merged into GraphQL Tools**,  
+so it will no longer get updates. Use GraphQL Tools instead to stay up-to-date!  
 [link](https://github.com/Urigo/merge-graphql-schemas)  
 [How to migration](https://www.graphql-tools.com/docs/migration-from-merge-graphql-schemas/)  
+
+
+**should refactoring type-graphql**  
+[type-graphql](https://github.com/MichalLytek/type-graphql)
