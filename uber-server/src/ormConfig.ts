@@ -3,11 +3,11 @@ import { ConnectionOptions } from "typeorm"
 const connectionOptions: ConnectionOptions = {
     type: "postgres",
     host: process.env.DB_ENDPOINT,
-    port: 5432,
+    port: 5432, // postgresql 기본 포트
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: "uber",
-    synchronize: true,
+    synchronize: true, // django로 치면 자동으로 migration 하는 것
     logging: true,
     entities: [
         "./entities/**/*.*"
