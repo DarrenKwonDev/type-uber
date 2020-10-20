@@ -30,3 +30,13 @@ type User {
   createdAt: String!
   updatedAt: String
 }
+
+type Verification {
+  id: Int!
+  target: String!
+  paylaod: String!
+  key: String!
+  used: Boolean!
+  createdAt: String!
+  updatedAt: String!
+}
