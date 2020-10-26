@@ -19,6 +19,7 @@ type User {
   chat: Chat
   messages: [Message]
   verifications: [Verification]
+  fbId: String
   ridesAsPassenger: [Ride]
   ridesAsDriver: [Ride]
   createdAt: String!

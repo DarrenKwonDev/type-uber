@@ -14,7 +14,7 @@ uber clone using typescript+node+react+graphQL
 
 ### public Resolvers
 
-- [ ] Sign in / up with Facebook  
+- [x] Sign in / up with Facebook  
 - [ ] Log in / up with Email(Local)
 - [ ] Starts Phone Number Verification  
 - [ ] Complete Phone Number Verification  
@@ -23,6 +23,8 @@ uber clone using typescript+node+react+graphQL
 
 ### private Resolvers (JWT)
 
+- [ ] generate JWT
+- [ ] verify JWT
 - [ ] Verify Email
 - [ ] Get My Profile
 - [ ] Update My Profile
