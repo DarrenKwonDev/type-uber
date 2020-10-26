@@ -7,9 +7,13 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
-  UpdateDateColumn
+  UpdateDateColumn,
 } from "typeorm";
+import Chat from "./Chat";
+import Message from "./Message";
 
 const BCRYPT_ROUNDS = 10;
 
@@ -63,6 +67,12 @@ class User extends BaseEntity {
   @Column({ type: "double precision", default: 0 })
   lastOrientation: number;
 
+  @ManyToOne((type) => Chat, (chat) => chat.participants)
+  chat: Chat;
+
+  @OneToMany((type) => Message, (message) => message.user)
+  messages: Message[];
+
   @CreateDateColumn() createdAt: string;
   @UpdateDateColumn() updatedAt: string;
 
@@ -71,15 +81,15 @@ class User extends BaseEntity {
   }
 
   private hashPassword(password: string): Promise<string> {
-    return bcrypt.hash(password, BCRYPT_ROUNDS)
+    return bcrypt.hash(password, BCRYPT_ROUNDS);
   }
 
   @BeforeInsert()
   @BeforeUpdate()
   async savePassword(): Promise<void> {
     if (this.password) {
-      const hashedPassword = await this.hashPassword(this.password)
-      this.password = hashedPassword
+      const hashedPassword = await this.hashPassword(this.password);
+      this.password = hashedPassword;
     }
   }
 

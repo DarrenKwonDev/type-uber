@@ -1,3 +1,42 @@
+type Chat {
+  id: Int!
+  createdAt: String!
+  updatedAt: String
+}
+
+type Message {
+  id: Int!
+  createdAt: String!
+  updatedAt: String
+}
+
+type Place {
+  id: Int!
+  name: String!
+  lat: Float!
+  lng: Float!
+  address: String!
+  isFav: Boolean!
+  createdAt: String!
+  updatedAt: String
+}
+
+type Ride {
+  id: Int!
+  status: String!
+  pickUpAddress: String!
+  pickUpLat: Float!
+  pickUpLng: Float!
+  dropOffAddress: Float!
+  dropOffLat: Float!
+  dropOffLng: Float!
+  price: Float!
+  distance: String!
+  duration: String!
+  createdAt: String!
+  updatedAt: String
+}
+
 type User {
   id: Int!
   email: String
