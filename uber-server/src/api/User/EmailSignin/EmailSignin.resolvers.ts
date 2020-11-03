@@ -1,6 +1,6 @@
 import User from "../../../entities/User";
-import { EmailSignInMutationArgs, EmailSignInResponse } from "src/types/graph";
-import { Resolvers } from "src/types/resolvers";
+import { EmailSignInMutationArgs, EmailSignInResponse } from "../../../types/graph";
+import { Resolvers } from "../../../types/resolvers";
 
 const resolvers: Resolvers = {
   Mutation: {

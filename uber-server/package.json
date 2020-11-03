@@ -15,7 +15,8 @@
     "graphql-to-typescript": "^0.1.2",
     "nodemon": "^2.0.5",
     "ts-node": "^9.0.0",
-    "typescript": "^4.0.3"
+    "typescript": "^4.0.3",
+    "@types/twilio": "^2.11.0"
   },
   "scripts": {
     "pretypes": "gql-merge --out-file ./src/schema.graphql ./src/api/**/*.graphql",
@@ -34,6 +35,7 @@
     "graphql-yoga": "^1.18.3",
     "morgan": "^1.10.0",
     "pg": "^8.4.1",
+    "twilio": "^3.50.0",
     "typeorm": "^0.2.28"
   }
 }
