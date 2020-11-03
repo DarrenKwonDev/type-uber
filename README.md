@@ -15,7 +15,7 @@ uber clone using typescript+node+react+graphQL
 ### public Resolvers
 
 - [x] Sign in / up with Facebook  
-- [ ] Log in / up with Email(Local)
+- [x] Sign in with Email(Local)
 - [ ] Starts Phone Number Verification  
 - [ ] Complete Phone Number Verification  
 
