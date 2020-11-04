@@ -5,7 +5,7 @@ import createJWT from "../../utils/createJWT";
 
 const resolvers: Resolvers = {
   Mutation: {
-    EmailSignIn: async (_, args: EmailSignInMutationArgs): Promise<EmailSignInResponse> => {
+    EmailSignIn: async (_, args: EmailSignInMutationArgs, context, info): Promise<EmailSignInResponse> => {
       const { email, password } = args;
       try {
         const user = await User.findOne({ email });
