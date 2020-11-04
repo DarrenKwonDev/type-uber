@@ -10,9 +10,10 @@ const resolvers: Resolvers = {
       args: FacebookConnectMutationArgs
     ): Promise<FacebookConnectResponse> => {
       // 이미 같은 fbId를 가진 유저가 있는지 체크함 (1번째 try/catch)
+      const { fbId } = args;
       try {
         // 동일한 fbId를 가진 유저가 있는지 체크
-        const existingUser = await User.findOne({ fbId: args.fbId });
+        const existingUser = await User.findOne({ fbId });
         const token = createJWT((existingUser as User).id);
         if (existingUser) {
           return {
@@ -33,7 +34,7 @@ const resolvers: Resolvers = {
       try {
         const newUser = await User.create({
           ...args,
-          profilePhoto: `https://graph.facebook.com/${args.fbId}/picture?type=square`,
+          profilePhoto: `https://graph.facebook.com/${fbId}/picture?type=square`,
         }).save();
 
         const token = createJWT(newUser.id);

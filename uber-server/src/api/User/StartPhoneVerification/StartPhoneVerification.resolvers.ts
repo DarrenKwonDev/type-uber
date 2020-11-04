@@ -8,6 +8,7 @@ import { sendVerificationSMS } from "../../utils/sendSMS";
 
 const resolvers: Resolvers = {
   Mutation: {
+    //TODO: 문자 인증을 위해 메세지를 보내기
     StartPhoneVerification: async (
       _,
       args: StartPhoneVerificationMutationArgs
@@ -25,8 +26,8 @@ const resolvers: Resolvers = {
           target: "PHONE",
         }).save();
 
-        //TODO: send SMS
         await sendVerificationSMS(newVerification.payload, newVerification.key);
+
         return {
           ok: true,
           error: null,
