@@ -17,14 +17,17 @@ uber clone using typescript+node+react+graphQL
 - [x] Sign in / up with Facebook  
 - [x] Sign in with Email(Local)
 - [x] Starts Phone Number Verification  
-- [ ] Complete Phone Number Verification  
+- [x] Complete Phone Number Verification  
+- [x] Sign up with Email  
 
 ---
 
+### Authentication  
+- [x] Generate JWT  
+- [ ] Verify JWT  
+
 ### private Resolvers (JWT)
 
-- [ ] generate JWT
-- [ ] verify JWT
 - [ ] Verify Email
 - [ ] Get My Profile
 - [ ] Update My Profile

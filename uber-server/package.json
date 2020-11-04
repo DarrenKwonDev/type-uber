@@ -7,16 +7,17 @@
     "@types/bcrypt": "^3.0.0",
     "@types/cors": "^2.8.8",
     "@types/helmet": "^0.0.48",
+    "@types/jsonwebtoken": "^8.5.0",
     "@types/morgan": "^1.9.1",
     "@types/node": "^14.11.10",
+    "@types/twilio": "^2.11.0",
     "@typescript-eslint/eslint-plugin": "^4.4.1",
     "eslint": "^7.11.0",
     "gql-merge": "^0.0.6",
     "graphql-to-typescript": "^0.1.2",
     "nodemon": "^2.0.5",
     "ts-node": "^9.0.0",
-    "typescript": "^4.0.3",
-    "@types/twilio": "^2.11.0"
+    "typescript": "^4.0.3"
   },
   "scripts": {
     "pretypes": "gql-merge --out-file ./src/schema.graphql ./src/api/**/*.graphql",
@@ -33,6 +34,7 @@
     "eslint-config-prettier": "^6.13.0",
     "graphql-tools": "^6.2.4",
     "graphql-yoga": "^1.18.3",
+    "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "pg": "^8.4.1",
     "twilio": "^3.50.0",

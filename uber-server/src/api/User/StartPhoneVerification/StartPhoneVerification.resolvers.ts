@@ -1,11 +1,17 @@
 import Verification from "../../../entities/Verification";
-import { StartPhoneVerificationMutationArgs, StartPhoneVerificationResponse } from "../../../types/graph";
+import {
+  StartPhoneVerificationMutationArgs,
+  StartPhoneVerificationResponse,
+} from "../../../types/graph";
 import { Resolvers } from "../../../types/resolvers";
 import { sendVerificationSMS } from "../../utils/sendSMS";
 
 const resolvers: Resolvers = {
   Mutation: {
-    StartPhoneVerification: async (_, args: StartPhoneVerificationMutationArgs): Promise<StartPhoneVerificationResponse> => {
+    StartPhoneVerification: async (
+      _,
+      args: StartPhoneVerificationMutationArgs
+    ): Promise<StartPhoneVerificationResponse> => {
       const { phoneNumber } = args;
       try {
         const existingVerification = await Verification.findOne({ payload: phoneNumber });
@@ -14,9 +20,11 @@ const resolvers: Resolvers = {
         }
 
         // key의 경우 BeforeInsert 리스너를 통해 자동 생성됨.
-        const newVerification = await Verification.create({ payload: phoneNumber, target: "PHONE" }).save();
+        const newVerification = await Verification.create({
+          payload: phoneNumber,
+          target: "PHONE",
+        }).save();
 
-        console.log(newVerification);
         //TODO: send SMS
         await sendVerificationSMS(newVerification.payload, newVerification.key);
         return {
