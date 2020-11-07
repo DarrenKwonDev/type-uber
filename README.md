@@ -23,12 +23,12 @@ uber clone using typescript+node+react+graphQL
 ---
 
 ### Authentication  
+
 - [x] Generate JWT  
-- [ ] Verify JWT  
+- [x] Verify JWT  
 
 ### private Resolvers (JWT)
 
-- [ ] Verify Email
 - [ ] Get My Profile
 - [ ] Update My Profile
 - [ ] Toggle Driving Mode
