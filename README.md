@@ -10,7 +10,7 @@ uber clone using typescript+node+react+graphQL
 - [x] GraphQL  
 - [x] TypeORM
 
-## Backedn Resolvers  
+## Backend Resolvers  
 
 ### public Resolvers
 
@@ -29,7 +29,7 @@ uber clone using typescript+node+react+graphQL
 
 ### private Resolvers (JWT)
 
-- [ ] Get My Profile
+- [x] Get My Profile
 - [ ] Update My Profile
 - [ ] Toggle Driving Mode
 - [ ] Report location & orientation
@@ -57,4 +57,6 @@ so it will no longer get updates. Use GraphQL Tools instead to stay up-to-date!
 
 
 **should refactoring type-graphql**  
-[type-graphql](https://github.com/MichalLytek/type-graphql)
+[type-graphql](https://github.com/MichalLytek/type-graphql)  
+
+**
