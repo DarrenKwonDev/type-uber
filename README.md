@@ -30,6 +30,8 @@ uber clone using typescript+node+react+graphQL
 ### private Resolvers (JWT)
 
 - [x] Get My Profile
+- [x] Starts Email Verification  
+- [x] Complete Email Verification  
 - [ ] Update My Profile
 - [ ] Toggle Driving Mode
 - [ ] Report location & orientation

@@ -10,7 +10,7 @@ const resolvers: Resolvers = {
     RequestEmailVerification: privateResolver(
       async (_, __, context, info): Promise<RequestEmailVerificationResponse> => {
         const user: User = context.req.user;
-        if (user.email) {
+        if (user.email && !user.verifiedEmail) {
           try {
             const oldVerification = await Verification.findOne({ payload: user.email });
             if (oldVerification) {
@@ -24,6 +24,9 @@ const resolvers: Resolvers = {
             return { ok: false, error: error.message };
           }
         } else {
+          if (user.verifiedEmail) {
+            return { ok: false, error: "You already verified your email" };
+          }
           return { ok: false, error: "Your user has no email to verify" };
         }
       }
