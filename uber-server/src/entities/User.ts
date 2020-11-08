@@ -39,6 +39,7 @@ class User extends BaseEntity {
   @Column({ type: "int", nullable: true })
   age: number;
 
+  // nullable: true 넣을까 말까
   @Column({ type: "text", nullable: true })
   password: string;
 
