@@ -32,9 +32,9 @@ uber clone using typescript+node+react+graphQL
 - [x] Get My Profile
 - [x] Starts Email Verification  
 - [x] Complete Email Verification  
-- [ ] Update My Profile
-- [ ] Toggle Driving Mode
-- [ ] Report location & orientation
+- [x] Update My Profile
+- [x] Toggle Driving Mode
+- [x] Report location & orientation
 - [ ] Add Place
 - [ ] Edit Place
 - [ ] Delete Place

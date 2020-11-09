@@ -62,13 +62,13 @@ class User extends BaseEntity {
   isTaken: boolean;
 
   @Column({ type: "double precision", default: 0 })
-  lastLng: number;
+  lat: number;
 
   @Column({ type: "double precision", default: 0 })
-  lastLat: number;
+  lng: number;
 
   @Column({ type: "double precision", default: 0 })
-  lastOrientation: number;
+  orientation: number;
 
   @Column({ type: "text", nullable: true })
   fbId: string;
