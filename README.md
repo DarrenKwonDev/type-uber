@@ -35,8 +35,8 @@ uber clone using typescript+node+react+graphQL
 - [x] Update My Profile
 - [x] Toggle Driving Mode
 - [x] Report location & orientation
-- [ ] Add Place
-- [ ] Edit Place
+- [x] Add Place
+- [x] Edit Place
 - [ ] Delete Place
 - [ ] See Nearby Drivers
 - [ ] Subscribe to Nearby Drivers (graphql's subcribe)
