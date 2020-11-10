@@ -19,7 +19,10 @@ const resolvers: Resolvers = {
           // place를 수정하려는 사람이 생성한 place인지 체킹합니다.
           if (place) {
             if (place.userId === user.id) {
-              const notNull = cleanNullArgs(args);
+              // ...args로 뿌리면 placeId까지 들어가니까
+              const notNull = cleanNullArgs({ name: args.name, isFav: args.isFav });
+
+              // update
               await Place.update({ id: place.userId }, { ...notNull });
               return { ok: true, error: null };
             } else {
@@ -29,7 +32,7 @@ const resolvers: Resolvers = {
             return { ok: false, error: "place not found" };
           }
         } catch (error) {
-          return { ok: true, error: error.message };
+          return { ok: false, error: error.message };
         }
       }
     ),
