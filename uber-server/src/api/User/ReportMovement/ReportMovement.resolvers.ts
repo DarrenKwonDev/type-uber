@@ -7,7 +7,7 @@ import privateResolver from "../../utils/privateResolver";
 const resolvers: Resolvers = {
   Mutation: {
     ReportMovement: privateResolver(
-      async (_, args: ReportMovementMutationArgs, { req }): Promise<ReportMovementResponse> => {
+      async (_, args: ReportMovementMutationArgs, { req, pubSub }): Promise<ReportMovementResponse> => {
         const user: User = req.user;
         const notNull = cleanNullArgs(args);
 
@@ -18,6 +18,10 @@ const resolvers: Resolvers = {
           // 우선 notNull에서 받은 orientation, lng 꼴로 일단 넣을 수 있도록 User entity를 수정함.
           // User.graphql 또한 수정함
           await User.update({ id: user.id }, { ...notNull });
+
+          // subscription 이름과 완전히 동일해야 함. 여기서는 DriversSubscription.graphql에 이용되는 publish임.
+          pubSub.publish("driverUpdate", { DriversSubscription: user });
+
           return {
             ok: true,
             error: null,
