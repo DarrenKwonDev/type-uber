@@ -4,13 +4,22 @@ import { Resolvers } from "../../../types/resolvers";
 import cleanNullArgs from "../../utils/cleanNullArgs";
 import privateResolver from "../../utils/privateResolver";
 
+interface IProfileNotNull {
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  password?: string;
+  profilePhoto?: string;
+  age?: number;
+}
+
 const resolvers: Resolvers = {
   Mutation: {
     UpdateMyProfile: privateResolver(
       async (_, args: UpdateMyProfileMutationArgs, context): Promise<UpdateMyProfileResponse> => {
         const user: User = context.req.user;
 
-        const notNull = cleanNullArgs(args);
+        const notNull = cleanNullArgs(args) as IProfileNotNull;
 
         // @BeforeUpdate 리스너 사용을 위해 인스턴스 업데이트를 하기 위함
         if (notNull.password !== null && args.password !== null) {
