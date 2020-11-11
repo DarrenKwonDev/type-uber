@@ -11,7 +11,7 @@ const resolvers: Resolvers = {
         const user: User = req.user;
         const notNull = cleanNullArgs(args);
 
-        console.log(notNull);
+        console.log(user);
 
         try {
           //TODO: User entity 부분이 lastOrientation, lastLng 등으로 되어 있는데 이거 이렇게 넣으면 안될텐데
