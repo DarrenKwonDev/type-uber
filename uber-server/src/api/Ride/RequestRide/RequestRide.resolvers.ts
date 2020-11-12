@@ -11,12 +11,7 @@ const resolvers: Resolvers = {
         const user: User = req.user;
         try {
           const ride: Ride = await Ride.create({ ...args, passenger: user }).save();
-
-          if (ride) {
-            return { ok: true, error: null, ride };
-          } else {
-            return { ok: false, error: "Can't create Ride instance", ride: null };
-          }
+          return { ok: true, error: null, ride };
         } catch (error) {
           return { ok: false, error: error.message, ride: null };
         }
