@@ -41,9 +41,9 @@ uber clone using typescript+node+react+graphQL
 - [x] Get Place
 - [x] See Nearby Drivers
 - [x] Subscribe to Nearby Drivers (graphql's subcribe)
-- [ ] Request a Ride
-- [ ] Get Nearby Ride Requests
-- [ ] Subscribe to Nearby Ride Requests
+- [x] Request a Ride
+- [x] Get Nearby Ride Requests
+- [x] Subscribe to Nearby Ride Requests
 - [ ] Subscribe to Ride Status
 - [ ] Get Chat Room Messages
 - [ ] Subscribe to Chat rroom Messages
