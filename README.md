@@ -39,8 +39,8 @@ uber clone using typescript+node+react+graphQL
 - [x] Edit Place
 - [x] Delete Place
 - [x] Get Place
-- [ ] See Nearby Drivers
-- [ ] Subscribe to Nearby Drivers (graphql's subcribe)
+- [x] See Nearby Drivers
+- [x] Subscribe to Nearby Drivers (graphql's subcribe)
 - [ ] Request a Ride
 - [ ] Get Nearby Ride Requests
 - [ ] Subscribe to Nearby Ride Requests

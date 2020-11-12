@@ -19,8 +19,11 @@ const resolvers: Resolvers = {
           // User.graphql 또한 수정함
           await User.update({ id: user.id }, { ...notNull });
 
+          // 업데이트 한 user 정로를 반환하도록하자.
+          const updatedUser = await User.findOne({ id: user.id });
+
           // subscription 이름과 완전히 동일해야 함. 여기서는 DriversSubscription.graphql에 이용되는 publish임.
-          pubSub.publish("driverUpdate", { DriversSubscription: user });
+          pubSub.publish("driverUpdate", { DriversSubscription: updatedUser });
 
           return {
             ok: true,
