@@ -20,7 +20,7 @@ const appOptions: Options = {
   subscriptions: {
     path: SUBSCRIPTION_ENDPOINT,
     onConnect: async (connectionParams) => {
-      // onConnect에는 graphql 요청에서 넘어온 'X-JWT' 헤더가 있다.
+      // onConnect에는 graphql req에서 넘어온 'X-JWT' 헤더가 있다.
       const token = connectionParams["X-JWT"];
 
       if (token) {
