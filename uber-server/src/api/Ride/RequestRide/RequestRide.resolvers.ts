@@ -16,7 +16,7 @@ const resolvers: Resolvers = {
         // ----- 개발을 위해 임시적으로
 
         // 요청 상태이거나 운전자라면 또 요청을 날릴 수 없음.
-        if (!user.isRiding) {
+        if (!user.isRiding && !user.isDriving) {
           try {
             const ride: Ride = await Ride.create({ ...args, passenger: user }).save();
 
@@ -31,7 +31,7 @@ const resolvers: Resolvers = {
             return { ok: false, error: error.message, ride: null };
           }
         } else {
-          return { ok: false, error: "you can't request two ride", ride: null };
+          return { ok: false, error: "you can't request two ride or you are in driving", ride: null };
         }
       }
     ),

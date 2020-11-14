@@ -16,6 +16,8 @@ const resolvers: Resolvers = {
           try {
             let ride: Ride | undefined;
 
+            // 운전자가 ACCEPTED하는 로직
+
             if (args.status === "ACCEPTED") {
               ride = await Ride.findOne(
                 {
@@ -30,19 +32,35 @@ const resolvers: Resolvers = {
                 user.isTaken = true;
                 user.save();
 
-                // 운전 요청을 수락했으니 Chat Room을 만듭니다...
-                await Chat.create({ driver: user, passenger: ride.passenger }).save();
+                console.log("채팅방이 생성됩니다");
+
+                // 운전 요청을 수락했으니 Chat Room 생성 후 저장
+                const chat = await Chat.create({ driver: user, passenger: ride.passenger }).save();
+                ride.chat = chat;
+                ride.save();
+
+                console.log(ride);
               }
             } else {
               ride = await Ride.findOne({
                 id: args.rideId,
                 driver: user,
               });
+
+              console.log("Accpeted가 아니지만 ride 생성");
+              console.log("Accpeted가 아니지만 ride 생성");
+              console.log("Accpeted가 아니지만 ride 생성");
+              console.log("Accpeted가 아니지만 ride 생성");
+              console.log("Accpeted가 아니지만 ride 생성");
             }
+
+            // 운전자가 ACCEPTED 포함, status 변경시 전체적으로 실행되어야 할 로직
+
             if (ride) {
               ride.status = args.status;
               ride.save();
 
+              console.log("RideStatusSubscription이 동작해야 합니다");
               // save한 뒤의 내용물을 subscription하게 해야 한다.
               pubSub.publish("rideUpdate", { RideStatusSubscription: ride });
 
