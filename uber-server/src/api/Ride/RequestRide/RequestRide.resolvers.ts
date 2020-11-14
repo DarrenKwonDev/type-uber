@@ -11,8 +11,8 @@ const resolvers: Resolvers = {
         const user: User = req.user;
 
         // ----- 개발을 위해 임시적으로
-        user.isRiding = false;
-        user.save();
+        // user.isRiding = false;
+        // user.save();
         // ----- 개발을 위해 임시적으로
 
         // 요청 상태이거나 운전자라면 또 요청을 날릴 수 없음.

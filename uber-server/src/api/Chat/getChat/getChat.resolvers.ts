@@ -3,7 +3,7 @@ import privateResolver from "../../utils/privateResolver";
 import { GetChatQueryArgs, GetChatResponse } from "../../../types/graph";
 import User from "../../../entities/User";
 import Chat from "../../../entities/Chat";
-import Ride from "../../../entities/Ride";
+// import Ride from "../../../entities/Ride";
 
 const resolvers: Resolvers = {
   Query: {
@@ -11,10 +11,10 @@ const resolvers: Resolvers = {
       async (_, args: GetChatQueryArgs, { req, context }): Promise<GetChatResponse> => {
         const user: User = req.user;
         // ----- 개발을 위해 임시적으로
-        await User.update({ id: 1 }, { isRiding: false, isTaken: false });
-        Ride.delete({});
-        user.isTaken = false;
-        user.save();
+        // await User.update({ id: 1 }, { isRiding: false, isTaken: false });
+        // Ride.delete({});
+        // user.isTaken = false;
+        // user.save();
         // ----- 개발을 위해 임시적으로
 
         try {
