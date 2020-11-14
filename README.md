@@ -49,10 +49,8 @@ uber clone using typescript+node+react+graphQL
 - [x] Subscribe to Ride Status
 - [x] Create Chat Room
 - [x] Get Chat Room Messages
-- [ ] Send a Chat Message
-- [ ] Subscribe to Chat room Messages
-- [ ] Get Ride History
-- [ ] See Ride Detail
+- [x] Send a Chat Message
+- [x] Subscribe to Chat room Messages
 
 ## cautions
 
