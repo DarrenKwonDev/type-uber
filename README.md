@@ -62,5 +62,4 @@ so it will no longer get updates. Use GraphQL Tools instead to stay up-to-date!
 
 **should refactoring type-graphql**  
 [type-graphql](https://github.com/MichalLytek/type-graphql)  
-
 **
