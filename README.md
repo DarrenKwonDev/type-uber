@@ -63,3 +63,21 @@ so it will no longer get updates. Use GraphQL Tools instead to stay up-to-date!
 **should refactoring type-graphql**  
 [type-graphql](https://github.com/MichalLytek/type-graphql)  
 **
+
+## Frontend  
+
+### When User in Logged out status
+
+- [ ] Home
+- [ ] Phone Login
+- [ ] Verify Phone NUmber
+- [ ] Social Login
+
+### When User in Log in status
+
+- [ ] Home
+- [ ] Ride
+- [ ] Edit Account
+- [ ] Settings
+- [ ] Saved Places
+- [ ] Add Place

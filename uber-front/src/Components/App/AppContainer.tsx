@@ -8,13 +8,8 @@ const AppContainer: React.FC<any> = ({ data }) => {
     return (
         <>
             <GlobalStyle />
-            <div>
-                <div>
-                    {JSON.stringify(data)}
-                </div>
-                <AppPresenter isLoggedIn={data.auth.isLoggedIn} />
-                <button>what</button>
-            </div>
+            {JSON.stringify(data)}
+            <AppPresenter isLoggedIn={data.auth.isLoggedIn} />
         </>
     )
 }

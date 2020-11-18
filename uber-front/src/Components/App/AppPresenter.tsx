@@ -1,9 +1,23 @@
 import React from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
 
-const Thing = styled.div<{ theme: any }>`
-    background-color: ${props => props.theme.blueColor}
-`
+// const Thing = styled.div<{ theme: any }>`
+//     background-color: ${props => props.theme.blueColor}
+// `
+
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+
+import AddPlace from "../../Routes/AddPlace"
+import EditAccount from "../../Routes/EditAccount";
+import FindAddress from "../../Routes/FindAddress";
+import Home from "../../Routes/Home";
+import OutHome from "../../Routes/OutHome";
+import PhoneLogin from "../../Routes/PhoneLogin";
+import Places from "../../Routes/Places";
+import Ride from "../../Routes/Ride";
+import Settings from "../../Routes/Settings";
+import SocialLogin from "../../Routes/SocialLogin";
+import VerifyPhone from "../../Routes/VerifyPhone";
 
 interface IProps {
     isLoggedIn: boolean
@@ -11,9 +25,36 @@ interface IProps {
 
 function AppPresenter({ isLoggedIn }: IProps) {
     return <>
-        {isLoggedIn ? <Thing>you loged in</Thing> : <Thing>you logged out</Thing>}
+        <BrowserRouter>
+            {isLoggedIn ? <LoggedInRoutes /> : <LoggedOutRoutes />}
+        </BrowserRouter>
     </>
 }
+
+function LoggedInRoutes() {
+    return <Switch>
+        <Route path={"/"} exact={true} component={Home} />
+        <Route path={"/ride"} exact={true} component={Ride} />
+        <Route path={"/edit-account"} exact={true} component={EditAccount} />
+        <Route path={"/settings"} exact={true} component={Settings} />
+        <Route path={"/places"} exact={true} component={Places} />
+        <Route path={"/add-place"} exact={true} component={AddPlace} />
+        <Route path={"/find-address"} exact={true} component={FindAddress} />
+        <Redirect from={"*"} to={"/"} />
+    </Switch>
+}
+
+function LoggedOutRoutes() {
+    return <Switch>
+        <Route path={"/"} exact={true} component={OutHome} />
+        <Route path={"/phone-login"} component={PhoneLogin} />
+        <Route path={"/verify-phone/:number"} component={VerifyPhone} />
+        <Route path={"/social-login"} component={SocialLogin} />
+        <Redirect from={"*"} to={"/"} />
+    </Switch>
+
+}
+
 
 
 export default AppPresenter
