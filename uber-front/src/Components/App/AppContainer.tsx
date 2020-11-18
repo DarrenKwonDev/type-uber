@@ -5,10 +5,11 @@ import AppPresenter from "./AppPresenter"
 import GlobalStyle from '../../globalStyles'
 
 const AppContainer: React.FC<any> = ({ data }) => {
+    console.log(data);
+
     return (
         <>
             <GlobalStyle />
-            {JSON.stringify(data)}
             <AppPresenter isLoggedIn={data.auth.isLoggedIn} />
         </>
     )

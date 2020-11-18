@@ -1,11 +1,3 @@
-import React from 'react'
+import OutHomePresenter from './OutHomePresenter'
 
-function OutHome() {
-    return (
-        <div>
-            OutHome
-        </div>
-    )
-}
-
-export default OutHome
+export default OutHomePresenter

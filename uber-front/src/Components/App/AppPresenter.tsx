@@ -1,10 +1,4 @@
 import React from "react";
-// import styled from "styled-components";
-
-// const Thing = styled.div<{ theme: any }>`
-//     background-color: ${props => props.theme.blueColor}
-// `
-
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 
 import AddPlace from "../../Routes/AddPlace"
@@ -31,6 +25,7 @@ function AppPresenter({ isLoggedIn }: IProps) {
     </>
 }
 
+// 로그인된 상태일 때 사용할 router들
 function LoggedInRoutes() {
     return <Switch>
         <Route path={"/"} exact={true} component={Home} />
@@ -44,6 +39,7 @@ function LoggedInRoutes() {
     </Switch>
 }
 
+// 로그아웃된 상태일 때 사용할 router들
 function LoggedOutRoutes() {
     return <Switch>
         <Route path={"/"} exact={true} component={OutHome} />
