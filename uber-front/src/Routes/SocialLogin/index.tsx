@@ -1,11 +1,2 @@
-import React from 'react'
-
-function SocialLogin() {
-    return (
-        <div>
-            SocialLogin
-        </div>
-    )
-}
-
-export default SocialLogin
+import SocialLoginContainer from "./SocialLoginContainer";
+export default SocialLoginContainer;
