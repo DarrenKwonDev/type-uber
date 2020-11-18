@@ -33,7 +33,7 @@ const client = new ApolloClient({
         },
         logUserOut: (root, args, { cache }) => {
           localStorage.removeItem(LS_JWT_NAME);
-          cache.writeData({ data: { auth: { __typename: "Auth", isLoggedIn: false } } });
+          cache.writeData({ data: { __typename: "Auth", isLoggedIn: false } });
           return null;
         },
       },
