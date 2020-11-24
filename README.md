@@ -1,11 +1,10 @@
 # type-uber
 
-uber clone using typescript+node+react+graphQL
-(on developing...)
+uber service backend using typescript+node+graphQL
 
 ## tech stack  
 
-- [x] React.TS
+<!--- [x] React.TS-->
 - [x] Node.TS  
 - [x] GraphQL  
 - [x] TypeORM
@@ -64,6 +63,7 @@ so it will no longer get updates. Use GraphQL Tools instead to stay up-to-date!
 [type-graphql](https://github.com/MichalLytek/type-graphql)  
 **
 
+<!--
 ## Frontend  
 
 ### When User in Logged out status
@@ -81,3 +81,4 @@ so it will no longer get updates. Use GraphQL Tools instead to stay up-to-date!
 - [ ] Settings
 - [ ] Saved Places
 - [ ] Add Place
+>
